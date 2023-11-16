@@ -2,16 +2,16 @@ import React from "react";
 import "./App.css";
 
 class Book {
-  title: string;
-  author: string;
-  ratings: number[] = [];
+  public title: string;
+  private author: string;
+  public ratings: number[] = [];
 
   constructor(title: string, author: string) {
     this.title = title;
     this.author = author;
   }
 
-  addRating = (rating: number): void => {
+  public addRating = (rating: number): void => {
     if (rating >= 1 && rating < 5) {
       this.ratings.push(rating);
       console.log(`Rating ${rating} addet for ${this.title}`);
@@ -19,7 +19,7 @@ class Book {
       console.log(`Invalid rating. Please provide a rating beetwen 1 and 5.`);
     }
   };
-  getAveragerating(): number {
+  public getAveragerating(): number {
     if (this.ratings.length === 0) {
       return 0;
     }
@@ -27,7 +27,7 @@ class Book {
     return sum / this.ratings.length;
   }
 
-  displayInfo(): void {
+  public displayInfo(): void {
     console.log(`Title: ${this.title}, Author: ${this.author}`);
   }
 }
