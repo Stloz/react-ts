@@ -52,7 +52,7 @@ class Developer implements Employee, Person {
 function App() {
   return (
     <div className="App">
-      <header className="App-header"> Hello </header>
+      <header className="App-header"> Hello implements </header>
     </div>
   );
 }
