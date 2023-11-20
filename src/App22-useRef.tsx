@@ -1,7 +1,13 @@
-import React, { useState, useEffect, useReducer, useContext } from "react";
+import React, {
+  useState,
+  useEffect,
+  useReducer,
+  useContext,
+  useRef,
+} from "react";
 import "./App.css";
-import { ProductContext } from "./index21-useContext";
 //import { ProductContext } from ".";
+import { ProductContext } from "./index21-useContext";
 
 type InitialState = {
   count: 0;
@@ -49,13 +55,12 @@ const App: React.FC<{}> = () => {
     dispatch({ type: ACTION_TYPE.INCREMENT });
   };
 
-  const context = useContext(ProductContext);
+  const ref = useRef<HTMLElement | null>(null);
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header ref={ref} className="App-header">
         <p onClick={handleClick}>Count: {state.count}</p>
-        <p>Selectes product id: {context?.selectedProductId}</p>
       </header>
     </div>
   );

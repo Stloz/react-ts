@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App21-useContext";
+import App from "./App22-useRef";
 import reportWebVitals from "./reportWebVitals";
 import { create } from "domain";
 import { createContext } from "vm";
@@ -18,17 +18,17 @@ type ProductContextType = {
   selectedProductId: number;
 };
 
-export const ProductContext = createContext<ProductContextType | null>(null);
+// export const ProductContext = createContext<ProductContextType | null>(null);
 
 root.render(
   <React.StrictMode>
     {/* <App onClick={() => alert(123)} test={<div>Hi</div>}>
       <Child style={{ color: "red" }} />
     </App> */}
-    {/* <App /> */}
-    <ProductContext.Provider value={{ selectedProductId: 1 }}>
+    <App />
+    {/* <ProductContext.Provider value={{ selectedProductId: 1 }}>
       <App />
-    </ProductContext.Provider>
+    </ProductContext.Provider> */}
   </React.StrictMode>
 );
 
