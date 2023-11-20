@@ -1,23 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App20-useReducer";
+import App from "./App21-useContext";
 import reportWebVitals from "./reportWebVitals";
+import { create } from "domain";
+import { createContext } from "vm";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const Child: React.FC<{ style: React.CSSProperties }> = ({ style }) => (
-  <div style={style}>Child prop</div>
-);
+// const Child: React.FC<{ style: React.CSSProperties }> = ({ style }) => (
+//   <div style={style}>Child prop</div>
+// );
+
+type ProductContextType = {
+  selectedProductId: number;
+};
+
+export const ProductContext = createContext<ProductContextType | null>(null);
 
 root.render(
   <React.StrictMode>
     {/* <App onClick={() => alert(123)} test={<div>Hi</div>}>
       <Child style={{ color: "red" }} />
     </App> */}
-    <App />
+    {/* <App /> */}
+    <ProductContext.Provider value={{ selectedProductId: 1 }}>
+      <App />
+    </ProductContext.Provider>
   </React.StrictMode>
 );
 
