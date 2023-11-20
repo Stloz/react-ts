@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App19-useState";
+import App from "./App20-useReducer";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
@@ -14,9 +14,10 @@ const Child: React.FC<{ style: React.CSSProperties }> = ({ style }) => (
 
 root.render(
   <React.StrictMode>
-    <App onClick={() => alert(123)} test={<div>Hi</div>}>
+    {/* <App onClick={() => alert(123)} test={<div>Hi</div>}>
       <Child style={{ color: "red" }} />
-    </App>
+    </App> */}
+    <App />
   </React.StrictMode>
 );
 
